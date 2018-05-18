@@ -26,10 +26,8 @@ sha256=$(curl -sL "https://github.com/codacy/${formula}/archive/v$version.tar.gz
 git checkout master
 git pull
 
-sed 's/^\(.*\/v\).*\(.tar.gz"\)$/\1'"$version"'\2/' "$formula_path"
-> "$formula_path.modified"
-sed 's/^\(.*sha256 "\).*\(".*\)$/\1'"$sha256"'\2/' "$formula_path.modified"
-> "$formula_path"
+sed 's/^\(.*\/v\).*\(.tar.gz"\)$/\1'"$version"'\2/' "$formula_path" > "$formula_path.modified"
+sed 's/^\(.*sha256 "\).*\(".*\)$/\1'"$sha256"'\2/' "$formula_path.modified" > "$formula_path"
 rm "$formula_path.modified"
 
 git add "$formula_path"
