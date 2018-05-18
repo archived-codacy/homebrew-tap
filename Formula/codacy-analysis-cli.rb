@@ -1,4 +1,4 @@
-class Codacy < Formula
+class CodacyAnalysisCli < Formula
   desc "Codacy Analysis CLI"
   homepage "https://github.com/codacy/codacy-analysis-cli"
   url "https://github.com/codacy/codacy-analysis-cli/archive/v0.1.0-alpha2.tar.gz"
