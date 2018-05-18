@@ -33,4 +33,9 @@ rm "$formula_path.modified"
 git add "$formula_path"
 git commit -m "Release v$version"
 git show
-git push
+
+read -p "Do you want to push? " choice
+if [[ "$choice" =~ ^[Yy]$ ]]; then
+  git push
+fi
+
